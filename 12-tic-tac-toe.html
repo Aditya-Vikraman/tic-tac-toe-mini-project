@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Tic-Tac-Toe
+    </title>
+    <style>
+      body {
+        font-family: Arial;
+        background-color: black;
+      }
+      .button0 {
+        background-color: rgb(70, 70, 70);
+        color: white;
+        font-size: 100px;
+        height: 120px;
+        width: 120px;
+        border: none;
+        border-radius: 60px;
+        margin-right: 15px;
+        margin-top: 15px;
+        cursor: pointer;
+        vertical-align: top;
+      }
+      .score {
+        color: white;
+        font-size: 45px;
+      }
+      .buttons-grid {
+        display: grid;
+        grid-template-columns: 135px 135px 135px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="js-buttons buttons-grid"></div>
+
+    <p class="score js-score">Tic-Tac -Toe</p>
+
+    <script>
+      let arrayButton = [
+      `<button class="button0 js-button-1"></button>`,
+
+      `<button class="button0 js-button-2"></button>`,
+
+      `<button class="button0 js-button-3"></button>`,
+
+      `<button class="button0 js-button-4"></button>`,
+
+      `<button class="button0 js-button-5"></button>`,
+
+      `<button class="button0 js-button-6"></button>`,
+
+      `<button class="button0 js-button-7"></button>`,
+
+      `<button class="button0 js-button-8"></button>`,
+
+      `<button class="button0 js-button-9"></button>`,
+      ]
+
+      renderButton ()
+
+      function renderButton () {
+        let buttonListHtml = '';
+        let z = true;
+
+        arrayButton.forEach ((button, index) => {
+          buttonListHtml += button;
+        })
+
+        document.querySelector('.js-buttons').innerHTML = buttonListHtml;
+
+        document.querySelectorAll('.button0').forEach ((button, index) => {
+          button.addEventListener('click', () => {
+            if (z === true && button.innerText === '') {
+            button.innerHTML = 'o';
+            z = false;
+          } else if (z === false && button.innerText === ''){
+            button.innerHTML = 'x';
+            z = true;
+          }
+            score ();
+          })
+        })
+      }
+
+      const button1 = document.querySelector('.js-button-1');
+      const button2 = document.querySelector('.js-button-2');
+      const button3 = document.querySelector('.js-button-3');
+      const button4 = document.querySelector('.js-button-4');
+      const button5 = document.querySelector('.js-button-5');
+      const button6 = document.querySelector('.js-button-6');
+      const button7 = document.querySelector('.js-button-7');
+      const button8 = document.querySelector('.js-button-8');
+      const button9 = document.querySelector('.js-button-9');
+
+      function score () {
+        if (button1.innerText === 'o' && button2.innerText ==='o' && button3.innerText === 'o' ) {
+          alert('player 1  wins')
+        } else if (button3.innerText === 'o' && button4.innerText ==='o' && button5.innerText === 'o' ) {
+          alert('player 1  wins')
+        } else if (button7.innerText === 'o' && button8.innerText ==='o' && button9.innerText === 'o' ) {
+          alert('player 1  wins')
+        } else if (button1.innerText === 'o' && button4.innerText ==='o' && button7.innerText === 'o' ) {
+          alert('player 1  wins')
+        } else if (button2.innerText === 'o' && button5.innerText ==='o' && button8.innerText === 'o' ) {
+          alert('player 1  wins')
+        } else if (button3.innerText === 'o' && button6.innerText ==='o' && button9.innerText === 'o' ) {
+          alert('player 1  wins')
+        } else if (button1.innerText === 'o' && button5.innerText ==='o' && button9.innerText === 'o' ) {
+          alert('player 1  wins')
+        } else if (button3.innerText === 'o' && button5.innerText ==='o' && button7.innerText === 'o' ) {
+          alert('player 1  wins')
+        } else if (button1.innerText === 'x' && button2.innerText ==='x' && button3.innerText === 'x' ) {
+          alert('player 2  wins')
+        } else if (button3.innerText === 'x' && button4.innerText ==='x' && button5.innerText === 'x' ) {
+          alert('player 2  wins')
+        } else if (button7.innerText === 'x' && button8.innerText ==='x' && button9.innerText === 'x' ) {
+          alert('player 2 wins')
+        } else if (button1.innerText === 'x' && button4.innerText ==='x' && button7.innerText === 'x' ) {
+          alert('player 2  wins')
+        } else if (button2.innerText === 'x' && button5.innerText ==='x' && button8.innerText === 'x' ) {
+          alert('player 2  wins')
+        } else if (button3.innerText === 'x' && button6.innerText ==='x' && button9.innerText === 'x' ) {
+          alert('player 2  wins')
+        } else if (button1.innerText === 'x' && button5.innerText ==='x' && button9.innerText === 'x' ) {
+          alert('player 2  wins')
+        } else if (button3.innerText === 'x' && button5.innerText ==='x' && button7.innerText === 'x' ) {
+          alert('player 2  wins')
+        }
+      }
+      /*function computerMove ()  {
+        if (button5.innerText=== '') {
+          button5.innerHTML = 'x';
+        } else {
+          button1.innerHTML = 'x';
+        }
+      }*/
+    </script>
+  </body>
+</html>
